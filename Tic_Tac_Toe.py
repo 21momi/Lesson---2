@@ -21,11 +21,8 @@ def format_symbol(symbol):
 def player_choice():
     symbol = ''
     while symbol not in ['X', 'O']:
-        symbol = input("do you want to be X or O?").lower()
-        if symbol == "X":
-            return ('X', 'O') 
-        else:
-            return ('O', 'X')
+        symbol = input("do you want to be X or O?").upper()
+        return (symbol, 'O' if symbol == 'X' else 'X')
 
 def player_move(board, symbol, player_name):
     move = -1
